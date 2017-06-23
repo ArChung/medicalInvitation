@@ -258,22 +258,13 @@ var simpleHide = simpleHide || {};
     };
 
     function shareToLine(s) {
-        var a;
-        var u;
-        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
-            a = "I";
-        } else if (/(Android)/i.test(navigator.userAgent)) {
-            a = "A";
-        } else {
-            a = "P";
-        }
-
-        if (a == "P") {
-            u = "https://timeline.line.me/social-plugin/share?url=https://archung.github.io/medicalInvitation/index.html";
-        } else {
-            u = "line://msg/text/" + s;
-        }
-        window.open(u, "line share", 600, 600);
+        var element = getAtagElement();
+        // var evObj=document.createEvent('Events');
+        // evObj.initEvent('click',true,false);
+        element.href = 'http://line.naver.jp/R/msg/text/?' + encodeURIComponent(s);
+        // element.dispatchEvent(evObj);
+        element.click();
+        // console.log($('#share-a-tag').length)
     }
 
     function pageScrollAni(top) {

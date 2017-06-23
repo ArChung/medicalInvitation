@@ -101,7 +101,8 @@ function goNext() {
     var cNext = cNow + 1;
 
     if (cNext > pages.length) {
-        cNext = 1;
+        // cNext = 1;
+        return;
     }
 
     ChungTool.removeClassWithFilter(mom, 'channel_');

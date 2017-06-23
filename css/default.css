@@ -3615,9 +3615,7 @@ html, body {
   position: relative;
 }
 .bigContainer .container.channel_5 .p5 .wrap .t4 {
-  width: 480px;
-  height: 491px;
-  background-image: url("../images/p5_4.png");
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -3727,9 +3725,7 @@ html, body {
   position: relative;
 }
 .bigContainer .container.channel_6 .p6 .wrap .t5 {
-  width: 517px;
-  height: 525px;
-  background-image: url("../images/p6_5.png");
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -3875,6 +3871,9 @@ html, body {
 .bigContainer .container.channel_7 .p7 .wrap *:first-child {
   position: relative;
 }
+.bigContainer .container.channel_6 .arr {
+  display: none;
+}
 
 .arr {
   width: 59px;
@@ -4013,10 +4012,6 @@ html, body {
   height: 60px;
   top: 0;
   left: 450px;
-}
-
-.updown {
-  z-index: 5;
 }
 
 .padShow {
