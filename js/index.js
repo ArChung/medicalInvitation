@@ -48,7 +48,7 @@ function initPop() {
 
 function initLine() {
     $('.lineBtn').click(function() {
-        ChungTool.shareToLine('');
+        ChungTool.shareToLine('https://archung.github.io/medicalInvitation/index.html');
     })
 }
 

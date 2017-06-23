@@ -258,9 +258,22 @@ var simpleHide = simpleHide || {};
     };
 
     function shareToLine(s) {
-        var element = getAtagElement();
-        element.href = protocol + '//line.naver.jp/R/msg/text/?' + encodeURIComponent(s);
-        element.dispatchEvent(makeMouseClickEvent());
+        var a;
+        var u;
+        if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+            a = "I";
+        } else if (/(Android)/i.test(navigator.userAgent)) {
+            a = "A";
+        } else {
+            a = "P";
+        }
+
+        if (a == "P") {
+            u = "https://timeline.line.me/social-plugin/share?url=https://archung.github.io/medicalInvitation/index.html";
+        } else {
+            u = "line://msg/text/" + s;
+        }
+        window.open(u, "line share", 600, 600);
     }
 
     function pageScrollAni(top) {
@@ -315,6 +328,7 @@ var simpleHide = simpleHide || {};
     function windoePosTop() {
         return typeof window.pageYOffset != 'undefined' ? window.pageYOffset : document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop ? document.body.scrollTop : 0;
     }
+
     function addSwipeUpDownEvent(el, upFunc, downFunc) {
         // var touchObj = document.getElementById("index_banner_swipe");
         var start_y;
@@ -414,12 +428,13 @@ var simpleHide = simpleHide || {};
     function scrollReachEnd(el) {
         return (el.scrollTop() + el.innerHeight() >= el[0].scrollHeight)
     }
+
     function scrollReachTop(el) {
-        return (el.scrollTop() ==0)
+        return (el.scrollTop() == 0)
     }
 
 
-    function checkIdle(delay,func,func2) {
+    function checkIdle(delay, func, func2) {
         idleTimer = null;
         idleState = false;
         idleWait = delay;
@@ -446,7 +461,7 @@ var simpleHide = simpleHide || {};
 
         $("body").trigger("touchend");
     }
-    
+
     ChungTool.checkIdle = checkIdle;
     ChungTool.scrollReachTop = scrollReachTop;
     ChungTool.scrollReachEnd = scrollReachEnd;
