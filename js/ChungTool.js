@@ -259,12 +259,12 @@ var simpleHide = simpleHide || {};
 
     function shareToLine(s) {
         var element = getAtagElement();
-        // var evObj=document.createEvent('Events');
-        // evObj.initEvent('click',true,false);
+        
+        
         element.href = 'http://line.naver.jp/R/msg/text/?' + encodeURIComponent(s);
-        // element.dispatchEvent(evObj);
+        
         element.click();
-        // console.log($('#share-a-tag').length)
+        
     }
 
     function pageScrollAni(top) {
