@@ -4015,6 +4015,10 @@ html, body {
   left: 450px;
 }
 
+.updown {
+  z-index: 5;
+}
+
 .padShow {
   display: none !important;
 }
